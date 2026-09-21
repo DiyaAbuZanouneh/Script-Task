@@ -187,3 +187,207 @@ function leapYear(year) {
 
 leapYear(2024);
 leapYear(2023);
+
+// Loops Task :
+// Part 1 =>
+// With For Loop
+for (let i = 1; i <= 50; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+
+// With While Loop
+let i = 1;
+
+while (i <= 50) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+
+  i++;
+}
+
+// Part 2 =>
+for (let i = 2; i <= 50; i += 2) {
+  console.log(i);
+}
+
+// Part 3 =>
+// Even
+for (let i = 1; i <= 50; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+
+// Odd
+for (let i = 1; i <= 50; i++) {
+  if (i % 2 !== 0) {
+    console.log(i);
+  }
+}
+
+// Part 4 =>
+// Without Function
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
+
+// Part 5 =>
+// With Function
+function fizzBuzz(num) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (num % 3 === 0) {
+    console.log("Fizz");
+  } else if (num % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(num);
+  }
+}
+
+for (let i = 1; i <= 100; i++) {
+  fizzBuzz(i);
+}
+
+// Part 6 =>
+// Recursive
+function fizzBuzz(num) {
+  if (num > 100) {
+    return;
+  }
+
+  if (num % 3 === 0 && num % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (num % 3 === 0) {
+    console.log("Fizz");
+  } else if (num % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(num);
+  }
+
+  fizzBuzz(num + 1);
+}
+
+fizzBuzz(1);
+
+// Part 7 =>
+function banknotes(amount, notes) {
+  let result = [];
+
+  for (let note of notes) {
+    while (amount >= note) {
+      result.push(note);
+      amount -= note;
+    }
+  }
+
+  console.log(result);
+}
+
+banknotes(57, [25, 10, 5, 1]);
+
+// Part 8 =>
+function countCharacter(word, character) {
+  let count = 0;
+
+  word = word.toLowerCase();
+  character = character.toLowerCase();
+
+  for (let i = 0; i < word.length; i++) {
+    if (word.at(i) === character) {
+      count++;
+    }
+  }
+
+  console.log(count);
+}
+
+countCharacter("Coding Academy by Orange", "o");
+
+// Part 9 =>
+// a
+for (let i = 0; i <= 20; i++) {
+  console.log(i);
+}
+
+// b
+for (let i = 0; i <= 20; i++) {
+  console.log(i);
+}
+
+// c
+for (let i = 12; i >= -14; i -= 2) {
+  console.log(i);
+}
+
+// d
+for (let i = 50; i >= 20; i--) {
+  if (i % 3 === 0) {
+    console.log(i);
+  }
+}
+
+// Part 10 =>
+let arr = [7, 500, "KH404", "black", 36];
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+let word = "CodingAcademy";
+for (let i = word.length - 1; i >= 0; i--) {
+  console.log(word[i]);
+}
+
+// Part 11 =>
+let numbers = [7, 23, 18, 9, -13, 38, -10, 12, 0, 124];
+
+let evens = [];
+let odds = [];
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] % 2 === 0) {
+    evens.push(numbers[i]);
+  } else {
+    odds.push(numbers[i]);
+  }
+}
+
+console.log("Evens:", evens);
+console.log("Odds:", odds);
+
+// Part 12 =>
+let proteins = ["chicken", "pork", "tofu", "beef", "fish", "beans"];
+
+let grains = ["rice", "pasta", "corn", "potato", "quinoa", "crackers"];
+
+let vegetables = [
+  "peas",
+  "green beans",
+  "kale",
+  "edamame",
+  "broccoli",
+  "asparagus",
+];
+
+let beverages = ["juice", "milk", "water", "soy milk", "soda", "tea"];
+
+let desserts = [
+  "apple",
+  "banana",
+  "more kale",
+  "ice cream",
+  "chocolate",
+  "kiwi",
+];
