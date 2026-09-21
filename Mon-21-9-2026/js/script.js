@@ -80,6 +80,80 @@ let part2 = "cactus";
 // console.log(part2.replaceAll(part2.at(0),"*"));
 
 // Arrays Task :
+// Part 1 => 
+let arr = ["Coding", "Academy", "By", "Orange"];
+// a
+arr.push("Jordan");
+console.log(arr);
+
+// b
+console.log(arr.slice(0, 2));
+
+// c 
+arr.unshift("Welcome", "To");
+console.log(arr);
+
+// d
+let arr3 = ["Coding", "Academy", "By", "Orange"];
+console.log(arr3.slice(1));
+
+// e 
+let arr4 = ["Coding", "Academy", "By", "Orange"];
+console.log(arr4.join(" "));
+
+// f 
+let arr5 = ["Coding", "Academy", "By", "Orange"];
+let newArr = arr5.slice();
+console.log(newArr);
+
+// g 
+let arr6 = ["Coding", "Academy", "By", "Orange"];
+let result = arr6.filter((item) => item === "Coding" || item === "Orange");
+console.log(result);
+
+// Part 2 
+var fruit = ["banana", "apple", "orange", "watermelon"];
+var vegetables = ["carrot", "tomato", "pepper", "lettuce"];
+
+// a 
+vegetables.pop();
+console.log(vegetables);
+
+// b 
+fruit.shift();
+console.log(fruit);
+
+// c 
+let orangeIndex1 = fruit.indexOf("orange");
+console.log(orangeIndex1);
+
+// d 
+let orangeIndex2 = fruit.indexOf("orange");
+console.log(orangeIndex2);
+
+// e 
+let vegetableLength = vegetables.length;
+console.log(vegetableLength);
+
+// f 
+vegetables.push(vegetableLength);
+console.log(vegetables);
+
+// g
+let food = fruit.concat(vegetables);
+console.log(food);
+
+// h
+food.splice(4, 2);
+console.log(food);
+
+// i
+food.reverse();
+console.log(food);
+
+// j 
+let result2 = food.join(", ");
+console.log(result2);
 
 // Conditionals Task :
 // Part 1 =>
@@ -340,9 +414,9 @@ for (let i = 50; i >= 20; i--) {
 }
 
 // Part 10 =>
-let arr = [7, 500, "KH404", "black", 36];
+let arr2 = [7, 500, "KH404", "black", 36];
 for (let i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
+  console.log(arr2[i]);
 }
 
 let word = "CodingAcademy";
@@ -391,3 +465,4 @@ let desserts = [
   "chocolate",
   "kiwi",
 ];
+
