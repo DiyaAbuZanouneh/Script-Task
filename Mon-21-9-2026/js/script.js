@@ -80,7 +80,7 @@ let part2 = "cactus";
 // console.log(part2.replaceAll(part2.at(0),"*"));
 
 // Arrays Task :
-// Part 1 => 
+// Part 1 =>
 let arr = ["Coding", "Academy", "By", "Orange"];
 // a
 arr.push("Jordan");
@@ -89,7 +89,7 @@ console.log(arr);
 // b
 console.log(arr.slice(0, 2));
 
-// c 
+// c
 arr.unshift("Welcome", "To");
 console.log(arr);
 
@@ -97,45 +97,45 @@ console.log(arr);
 let arr3 = ["Coding", "Academy", "By", "Orange"];
 console.log(arr3.slice(1));
 
-// e 
+// e
 let arr4 = ["Coding", "Academy", "By", "Orange"];
 console.log(arr4.join(" "));
 
-// f 
+// f
 let arr5 = ["Coding", "Academy", "By", "Orange"];
 let newArr = arr5.slice();
 console.log(newArr);
 
-// g 
+// g
 let arr6 = ["Coding", "Academy", "By", "Orange"];
 let result = arr6.filter((item) => item === "Coding" || item === "Orange");
 console.log(result);
 
-// Part 2 
+// Part 2
 var fruit = ["banana", "apple", "orange", "watermelon"];
 var vegetables = ["carrot", "tomato", "pepper", "lettuce"];
 
-// a 
+// a
 vegetables.pop();
 console.log(vegetables);
 
-// b 
+// b
 fruit.shift();
 console.log(fruit);
 
-// c 
+// c
 let orangeIndex1 = fruit.indexOf("orange");
 console.log(orangeIndex1);
 
-// d 
+// d
 let orangeIndex2 = fruit.indexOf("orange");
 console.log(orangeIndex2);
 
-// e 
+// e
 let vegetableLength = vegetables.length;
 console.log(vegetableLength);
 
-// f 
+// f
 vegetables.push(vegetableLength);
 console.log(vegetables);
 
@@ -151,7 +151,7 @@ console.log(food);
 food.reverse();
 console.log(food);
 
-// j 
+// j
 let result2 = food.join(", ");
 console.log(result2);
 
@@ -446,7 +446,7 @@ let proteins = ["chicken", "pork", "tofu", "beef", "fish", "beans"];
 
 let grains = ["rice", "pasta", "corn", "potato", "quinoa", "crackers"];
 
-let vegetables = [
+let vegetableItems = [
   "peas",
   "green beans",
   "kale",
@@ -466,3 +466,99 @@ let desserts = [
   "kiwi",
 ];
 
+// Objects Task :
+// Part 1
+function getProperties(obj) {
+  return Object.keys(obj);
+}
+
+let person = {
+  name: "Diya",
+  age: 20,
+  city: "Amman",
+};
+
+console.log(getProperties(person));
+
+// Part 2
+function countProperties(obj) {
+  return Object.keys(obj).length;
+}
+
+console.log(countProperties(person));
+
+// Part 3
+function combineObjects(obj1, obj2) {
+  return Object.assign({}, obj1, obj2);
+}
+
+let object1 = {
+  name: "Diya",
+  age: 20,
+};
+
+let object2 = {
+  city: "Amman",
+  country: "Jordan",
+};
+
+console.log(combineObjects(object1, object2));
+
+// Part 4
+function convertToUppercase(obj) {
+  let newObject = {};
+
+  for (let key in obj) {
+    if (typeof obj[key] === "string") {
+      newObject[key] = obj[key].toUpperCase();
+    } else {
+      newObject[key] = obj[key];
+    }
+  }
+
+  return newObject;
+}
+
+let data = {
+  name: "diya",
+  city: "amman",
+  age: 20,
+};
+
+console.log(convertToUppercase(data));
+
+// Part 5
+function removeNullValues(obj) {
+  let newObject = {};
+
+  for (let key in obj) {
+    if (obj[key] !== null) {
+      newObject[key] = obj[key];
+    }
+  }
+
+  return newObject;
+}
+
+let information = {
+  name: "Diya",
+  age: null,
+  city: "Amman",
+  phone: null,
+};
+
+console.log(removeNullValues(information));
+
+// Part 6 =
+function sortedProperties(obj) {
+  return Object.keys(obj).sort();
+}
+
+let student = {
+  z: 10,
+  a: 20,
+  c: 30,
+  b: 40,
+};
+
+console.log(sortedProperties(student));
