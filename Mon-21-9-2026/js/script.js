@@ -66,6 +66,24 @@ let number4 = 10;
 let number5 = 4;
 console.log(number4 % number5);
 
+// Strings Task : 
+// Part 1 =>
+let part1 = "Welcome to Orange";
+console.log("Upper Case Method : " , part1.toUpperCase());
+console.log("Slice Method : ", part1.toUpperCase().slice(8, 10));
+console.log("Lower Case Method :" , part1.toLowerCase());
+console.log("Length Property : " , part1.length);
+console.log("Replace Method : " , part1.replace("Orange",'"Orange"'));
+console.log("Concat Method : " , part1.concat(" Jordan"));
+
+// Part 2 =>
+let part2 = "cactus"; 
+// console.log(part2.replaceAll(part2.at(0),"*"));
+
+// Arrays Task :
+
+
+
 
 
 
