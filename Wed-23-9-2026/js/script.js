@@ -1,0 +1,172 @@
+// JavaScript Loops Task :
+// Basic =>
+
+// 1.
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}
+
+// 2.
+let arr = [1, 2, 3, 4, 5];
+console.log("Array Element : ");
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+// 3.
+console.log("Even Number : ");
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 == 0) console.log(i);
+}
+
+// 4.
+let sum = 0;
+for (let i = 1; i <= 10; i++) {
+  sum += i;
+}
+console.log("The sum of numbers from 1 to 10 : ");
+
+// 5.
+let arr2 = [1, 2, 3, 4, 5];
+let largest = arr2[0];
+
+for (let i = 0; i < arr2.length; i++) {
+  if (arr2[i] > largest) largest = arr2[i];
+}
+
+console.log("The largest number in array is : " + largest);
+
+// 6.
+let arr3 = [1, 2, 3, 4, 5];
+let sum2 = 0;
+for (let i = 0; i < arr3.length; i++) {
+  sum2 += arr3[i];
+}
+console.log("The Average is : " + sum2 / arr3.length);
+
+// Mid =>
+// 7.
+let factorial = 1;
+for (let i = 5; i >= 1; i--) {
+  factorial *= i;
+}
+
+console.log("The factorial is : " + factorial);
+
+// 8.
+let num = 10;
+let first = 0;
+let second = 1;
+
+console.log("Fibonacci : ");
+for (let i = 0; first <= num; i++) {
+  console.log(first);
+
+  let next = first + second;
+  first = second;
+  second = next;
+}
+
+// 9.
+let num2 = 20;
+console.log("Prime : ");
+for (let i = 2; i <= num2; i++) {
+  let isPrime = true;
+
+  for (let j = 2; j < i; j++) {
+    if (i % j === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+
+  if (isPrime) {
+    console.log(i);
+  }
+}
+
+// Advanced =>
+// 10.
+let arr4 = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+console.log("2D array element : ");
+for (let i = 0; i < arr4.length; i++) {
+  for (let j = 0; j < arr4[i].length; j++) {
+    console.log(arr4[i][j]);
+  }
+}
+
+// 11.
+let arr6 = [1, 2, 3, 4, 5];
+console.log("Reverse order array : ");
+for (let i = arr6.length - 1; i >= 0; i--) {
+  console.log(arr6[i]);
+}
+
+// 12.
+console.log("2 Steps : ");
+for (let i = 0; i < arr6.length; i += 2) {
+  console.log(arr6[i]);
+}
+
+// 13.
+let frequency = 1;
+let count = 0;
+let arr7 = [1, 2, 1, 3, 2, 1];
+for (let i = 0; i < arr7.length; i++) {
+  if (arr7[i] == frequency) count++;
+}
+
+console.log("The frequency of " + frequency + " is " + count + " times");
+
+// 14.
+const heros = [
+  { name: "Iron Man", power: "Tech" },
+  { name: "Spider-Man", power: "Spider abilities" },
+  { name: "Thor", power: "Godly powers" },
+  { name: "Hulk", power: "Super strength" },
+];
+
+const newHeros = [];
+
+for (let i = 0; i < heros.length; i++) {
+  newHeros.push({
+    hero: heros[i].name,
+    power: heros[i].power,
+    id: i,
+  });
+}
+
+console.log(newHeros);
+
+// 15.
+const inputWords = [
+  "spray",
+  "limit",
+  "elite",
+  "exuberant",
+  "destruction",
+  "present",
+];
+
+const newArray = inputWords.filter(function (word) {
+  return word.length > 7;
+});
+
+console.log(newArray);
+
+// 16.
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const sumSquaredDivisibleBy5 = numbers.reduce((sum, num) => {
+  return num % 5 === 0 ? sum + num * num : sum;
+}, 0);
+
+console.log(sumSquaredDivisibleBy5); // 125
+
+
+
+// Function Task :
