@@ -167,7 +167,7 @@ const sumSquaredDivisibleBy5 = numbers.reduce((sum, num) => {
 
 console.log(sumSquaredDivisibleBy5); // 125
 
-// Function Task :
+// JavaScript Function Task :
 // Basic =>
 
 // 1.
@@ -296,3 +296,68 @@ function findIndex(arr, element) {
   return -1;
 }
 console.log(findIndex(["Ali", "Mazen", "Ayham", "Murad"], "Ali"));
+
+// JavaScript Objects
+// 1.
+const Person = {
+  name: "Adam",
+  age: 25,
+  gender: "male",
+};
+
+console.log(Person);
+
+// 2.
+Person.phone = "0788537137";
+console.log(Person);
+
+// 3.
+console.log(Person.name);
+
+// JavaScript Array Task :
+// 1.
+let arr8 = [1, 2, 3, 4, 5];
+arr8.forEach((element) => {
+  console.log(element);
+});
+
+// 2. 
+// a. 
+let arr9 = ["apple", "banana", "cherry"];
+arr9.sort();
+console.log(arr9);
+
+// b.
+let firstArray = [1,2,3];
+let secondArray = [4,5,6];
+let concatArray = firstArray.concat(secondArray);
+console.log(concatArray);
+
+// c.
+console.log(concatArray.slice(2, 4));
+
+// d.
+console.log(concatArray.splice(4));
+
+// e.
+console.log(concatArray.indexOf(3));
+
+// f. 
+console.log(concatArray.join(","));
+
+// g.
+let str = "Hello Cohort 7";
+let strArray = str.split(" ");
+console.log(strArray);
+
+// 7.
+console.log(concatArray.length);
+
+// 8. 
+for(let element of concatArray){
+  console.log(element);
+}
+
+// 9. 
+console.log(Array.isArray(concatArray));
+
