@@ -167,6 +167,132 @@ const sumSquaredDivisibleBy5 = numbers.reduce((sum, num) => {
 
 console.log(sumSquaredDivisibleBy5); // 125
 
-
-
 // Function Task :
+// Basic =>
+
+// 1.
+function findSmallest(arr) {
+  let smallest = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < smallest) {
+      smallest = arr[i];
+    }
+  }
+  return smallest;
+}
+console.log(findSmallest([30, 45, 60, 7]));
+
+// 2.
+function AlphabeticalOrder(str) {
+  var letters = str.split("");
+  letters.sort();
+  return letters.join("");
+}
+console.log(AlphabeticalOrder("hello"));
+
+// 3.
+function factorial2(n) {
+  var result = 1;
+  for (var i = 1; i <= n; i++) {
+    result = result * i;
+  }
+  return result;
+}
+console.log(factorial2(8));
+
+// 4.
+function oddOrEven(num) {
+  if (num % 2 === 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+}
+console.log(oddOrEven(9));
+
+// Mid =>
+// 5.
+function addUp(num) {
+  var sum = 0;
+  for (var i = num; i >= 0; i--) {
+    sum = sum + i;
+  }
+  return sum;
+}
+console.log(addUp(6));
+console.log(addUp(8));
+
+// 6.
+function minMaxLengthAverage(arr) {
+  var min = arr[0];
+  var max = arr[0];
+  var sum = 0;
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+    sum = sum + arr[i];
+  }
+
+  var length = arr.length;
+  var average = sum / length;
+
+  var result = [min, max, length, average];
+  return result;
+}
+console.log(minMaxLengthAverage([7, 13, 3, 77, 100]));
+
+// Advanced =>
+// 7.
+function countWords(str) {
+  var words = str.split(" ");
+  return words.length;
+}
+console.log(countWords("hello from CodingAcademy!"));
+
+// 8.
+function MultiplyByLength(arr) {
+  var result = [];
+  for (var i = 0; i < arr.length; i++) {
+    result.push(arr[i] * arr.length);
+  }
+  return result;
+}
+console.log(MultiplyByLength([4, 2, 5]));
+
+// 9.
+function checkEnding(str1, str2) {
+  var lastPart = str1.slice(str1.length - str2.length);
+  if (lastPart === str2) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(checkEnding("CodingSchool", "Ac"));
+console.log(checkEnding("CodingSchool", "ool"));
+
+// 10.
+function doubleChar(str) {
+  var result = "";
+  for (var i = 0; i < str.length; i++) {
+    result = result + str[i] + str[i];
+  }
+  return result;
+}
+console.log(doubleChar("Coding"));
+
+// 11.
+function findIndex(arr, element) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === element) {
+      return i + 1;
+    }
+  }
+  return -1;
+}
+console.log(findIndex(["Ali", "Mazen", "Ayham", "Murad"], "Ali"));
