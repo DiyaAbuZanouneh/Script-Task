@@ -234,3 +234,158 @@ class Instructor extends PersonClass {
 console.log(new PersonClass("Guest", "g@mail.com").getInfo());
 console.log(new Student("Ali", "ali@mail.com", "IT").getInfo());
 console.log(new Instructor("Dr. Omar", "omar@mail.com", "JS").getInfo());
+
+// Exercise 12
+  import getNames, { students } from "./students.js";
+  import { average2 } from "./grades.js";
+  students.forEach(s => {
+    document.body.innerHTML += `<p>${s.name}: ${average2(s.grades)}</p>`;
+  });
+
+
+//  Exercises 13 → 19 
+if (typeof document !== "undefined") {
+  // Exercise 13
+  localStorage.setItem("name", "Ali");
+  localStorage.setItem("age", "20");
+  console.log(localStorage.getItem("name"));
+  localStorage.removeItem("age");
+  console.log(localStorage.key(0));
+  console.log(localStorage.length);
+  // localStorage.clear(); // بتمسح كل شي
+  let storageHtml = "<h3>Storage</h3>";
+  for (let i = 0; i < localStorage.length; i++) {
+    let k = localStorage.key(i);
+    storageHtml += `<p>${k} = ${localStorage.getItem(k)}</p>`;
+  }
+
+  document.body.innerHTML += storageHtml;
+ 
+  // Exercise 14
+  document.body.innerHTML += `
+    <h3>To-Do</h3>
+    <input id="task">
+    <button onclick="addTask()">Add</button>
+    <button onclick="clearTasks()">Clear All</button>
+    <p id="count"></p>
+    <ul id="list"></ul>`;
+ 
+  function getTasks() {
+    return JSON.parse(localStorage.getItem("tasks")) || [];
+  }
+
+  function saveTasks(tasks) {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    showTasks();
+  }
+
+  function showTasks() {
+    const tasks = getTasks();
+    document.getElementById("count").textContent = "Tasks: " + tasks.length;
+    document.getElementById("list").innerHTML = tasks
+      .map((t, i) => `<li style="${t.done ? "text-decoration:line-through" : ""}">
+          ${t.text}
+          <button onclick="toggleTask(${i})">Done</button>
+          <button onclick="deleteTask(${i})">Delete</button>
+        </li>`)
+      .join("");
+  }
+
+  window.addTask = function () {
+    const tasks = getTasks();
+    tasks.push({ text: document.getElementById("task").value, done: false });
+    saveTasks(tasks);
+  };
+
+  window.toggleTask = function (i) {
+    const tasks = getTasks();
+    tasks[i].done = !tasks[i].done;
+    saveTasks(tasks);
+  };
+
+  window.deleteTask = function (i) {
+    const tasks = getTasks();
+    tasks.splice(i, 1);
+    saveTasks(tasks);
+  };
+
+  window.clearTasks = function () {
+    localStorage.removeItem("tasks");
+    showTasks();
+  };
+ 
+  // Exercise 18
+  document.body.innerHTML += `<h3>Registration</h3><div id="form"></div>`;
+  let step = Number(sessionStorage.getItem("step")) || 1;
+ 
+  function showStep() {
+    sessionStorage.setItem("step", step);
+    const f = document.getElementById("form");
+    if (step === 1) {
+      f.innerHTML = `Step 1: Name <input id="fullName" value="${sessionStorage.getItem("fullName") || ""}">
+        <button onclick="next('fullName')">Next</button>`;
+    } else if (step === 2) {
+      f.innerHTML = `Step 2: University <input id="university" value="${sessionStorage.getItem("university") || ""}">
+        <button onclick="back()">Back</button>
+        <button onclick="next('university')">Next</button>`;
+    } else {
+      f.innerHTML = `Step 3: Review<br>
+        Name: ${sessionStorage.getItem("fullName")}<br>
+        University: ${sessionStorage.getItem("university")}<br>
+        <button onclick="back()">Back</button>
+        <button onclick="alert('Confirmed!')">Confirm</button>`;
+    }
+  }
+
+  window.next = function (field) {
+    sessionStorage.setItem(field, document.getElementById(field).value);
+    step++;
+    showStep();
+  };
+
+  window.back = function () {
+    step--;
+    showStep();
+  };
+ 
+  // Exercise 19 
+  function setCookie(name, value, days) {
+    const d = new Date();
+    d.setDate(d.getDate() + days);
+    document.cookie = `${name}=${value}; expires=${d.toUTCString()}; path=/`;
+  }
+
+  function getCookie(name) {
+    const c = document.cookie.split("; ").find((c) => c.startsWith(name + "="));
+    return c ? c.split("=")[1] : null;
+  }
+
+  function deleteCookie(name) {
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
+  }
+ 
+  document.body.innerHTML += `
+    <h3>Preferences</h3>
+    <select id="theme"><option>light</option><option>dark</option></select>
+    <select id="lang"><option>English</option><option>Arabic</option></select>
+    <button onclick="savePrefs()">Save</button>
+    <p id="prefs"></p>`;
+ 
+  window.savePrefs = function () {
+    setCookie("theme", document.getElementById("theme").value, 7);
+    setCookie("lang", document.getElementById("lang").value, 7);
+    showPrefs();
+  };
+  
+  function showPrefs() {
+    const theme = getCookie("theme") || "light";
+    document.body.style.background = theme === "dark" ? "#222" : "#fff";
+    document.body.style.color = theme === "dark" ? "#fff" : "#000";
+    document.getElementById("prefs").textContent =
+      "Theme: " + theme + " | Language: " + (getCookie("lang") || "English");
+  }
+ 
+  showTasks();
+  showStep();
+  showPrefs();
+}
