@@ -252,7 +252,7 @@ if (typeof document !== "undefined") {
   localStorage.removeItem("age");
   console.log(localStorage.key(0));
   console.log(localStorage.length);
-  // localStorage.clear(); // بتمسح كل شي
+  // localStorage.clear(); 
   let storageHtml = "<h3>Storage</h3>";
   for (let i = 0; i < localStorage.length; i++) {
     let k = localStorage.key(i);
