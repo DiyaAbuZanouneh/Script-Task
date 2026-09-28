@@ -65,3 +65,43 @@ function login() {
     window.location.href = "dashboard.html";
   }
 }
+
+// Logout
+function logout() {
+  localStorage.removeItem("currentUser");
+  window.location.href = "login.html";
+}
+
+// Dashboard
+if (document.getElementById("userInfo")) {
+  let user = getCurrentUser();
+  if (!user) {
+    window.location.href = "login.html";
+  } else {
+    document.getElementById("userInfo").innerHTML =
+      "<p>Name: " + user.name + "</p><p>Email: " + user.email + "</p>";
+  }
+}
+
+// Admin Dashboard
+if (document.getElementById("usersTable")) {
+  let user = getCurrentUser();
+  if (!user) {
+    window.location.href = "login.html";
+  } else if (user.role !== "admin") {
+    window.location.href = "dashboard.html";
+  } else {
+    let rows = "";
+    getUsers().forEach((u) => {
+      rows +=
+        "<tr><td>" +
+        u.name +
+        "</td><td>" +
+        u.email +
+        "</td><td>" +
+        u.role +
+        "</td></tr>";
+    });
+    document.getElementById("usersTable").innerHTML = rows;
+  }
+}
